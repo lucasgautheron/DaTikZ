@@ -10,7 +10,10 @@ from datasets import (
 )
 
 def get_creation_time(repo):
-    return datetime.strptime(load(urlopen(f"https://api.github.com/repos/{repo}"))['created_at'], "%Y-%m-%dT%H:%M:%SZ")
+    try:
+        return datetime.strptime(load(urlopen(f"https://api.github.com/repos/{repo}"))['created_at'], "%Y-%m-%dT%H:%M:%SZ")
+    except:
+        return datetime.strptime("2024-12-31T03:36:15Z", "%Y-%m-%dT%H:%M:%SZ")
 
 def lines_startwith(string, prefix):
     return all(line.startswith(prefix) for line in string.splitlines())
