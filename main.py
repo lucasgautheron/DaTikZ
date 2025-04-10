@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from argparse import ArgumentParser
 from datetime import datetime
-from os.path import abspath
+from os.path import abspath, basename
 from multiprocessing import set_start_method
 import random
 import sys
@@ -49,7 +49,7 @@ def is_contaminated(ex, code, steps=3):
     substrs = {random_substring(ex['code']) for _ in range(steps)}
     return any(any(s in c for s in substrs) for c in code if c != ex['code'])
 
-def train_test_split(dataset, test_size=1000):
+def train_test_split(dataset, test_size=1):
     cand = dataset.filter(lambda ex, code=dataset['code']: is_test_candidate(ex) and not is_contaminated(ex, code))
     cand = cand.add_column("labels", cand.class_encode_column("origin")['origin']).class_encode_column("labels")
 
@@ -108,5 +108,5 @@ if __name__ == "__main__":
     datikz = load_dataset("datikz", split="train", trust_remote_code=True, **vars(args))
     train, test = train_test_split(datikz)
 
-    train.to_parquet("datikz-train.parquet", compression="GZIP") # type: ignore
-    test.to_parquet("datikz-test.parquet", compression="GZIP") # type: ignore
+    train.to_parquet(f"datikz-train-{basename(args.arxiv_files)}.parquet", compression="GZIP") # type: ignore
+    test.to_parquet(f"datikz-test-{basename(args.arxiv_files)}.parquet", compression="GZIP") # type: ignore
