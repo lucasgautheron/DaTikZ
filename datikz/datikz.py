@@ -136,6 +136,17 @@ class TikZConfig(builder.BuilderConfig):
             "arxiv": list(arxiv.expand(arxiv_files)),
             "tex.stackexchange.com": "https://archive.org/download/stackexchange/tex.stackexchange.com.7z/Posts.xml",
         }
+        self.data_urls = {
+            # "PetarV-/TikZ": "https://github.com/PetarV-/TikZ/archive/refs/heads/master.zip",
+            # "janosh/tikz": "https://github.com/janosh/tikz/archive/refs/heads/main.zip",
+            # "tikz_favorites": "https://github.com/f0nzie/tikz_favorites/archive/refs/heads/master.zip",
+            # "LaTeX-examples": "https://github.com/MartinThoma/LaTeX-examples/archive/refs/heads/master.zip",
+            # "pgfmanual": "https://github.com/pgf-tikz/pgf/archive/refs/heads/master.zip",
+            # "chatgpt": "https://github.com/evanthebouncy/chatgpt-svg/raw/master/data.tsv",
+            # "openaiwatch": "https://hf.co/datasets/yuntian-deng/openaiwatch/resolve/main/data/train-00000-of-00001.parquet",
+            "arxiv": list(arxiv.expand(arxiv_files)),
+            # "tex.stackexchange.com": "https://archive.org/download/stackexchange/tex.stackexchange.com.7z/Posts.xml",
+        }
         # self.generators = {
         #     "PetarV-/TikZ": petarv_tikz.load,
         #     "janosh/tikz": janosh_tikz.load,
