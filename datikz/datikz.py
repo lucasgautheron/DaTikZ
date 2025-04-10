@@ -136,20 +136,35 @@ class TikZConfig(builder.BuilderConfig):
             "arxiv": list(arxiv.expand(arxiv_files)),
             "tex.stackexchange.com": "https://archive.org/download/stackexchange/tex.stackexchange.com.7z/Posts.xml",
         }
+        # self.generators = {
+        #     "PetarV-/TikZ": petarv_tikz.load,
+        #     "janosh/tikz": janosh_tikz.load,
+        #     "tikz_favorites": tikz_favorites.load,
+        #     "LaTeX-examples": latex_examples.load,
+        #     "pgfmanual": pgfmanual.load,
+        #     "chatgpt": chatgpt.load,
+        #     "openaiwatch": openaiwatch.load,
+        #     "gpt4": gpt4.load,
+        #     "texample.net": texample_net.load,
+        #     "tikz.net": tikz_net.load,
+        #     "pgfplots.net": tikz_net.load, # tikz.net downloader also works for this site
+        #     "arxiv": arxiv.load,
+        #     "tex.stackexchange.com": texse_gen
+        # }
         self.generators = {
-            "PetarV-/TikZ": petarv_tikz.load,
-            "janosh/tikz": janosh_tikz.load,
-            "tikz_favorites": tikz_favorites.load,
-            "LaTeX-examples": latex_examples.load,
-            "pgfmanual": pgfmanual.load,
-            "chatgpt": chatgpt.load,
-            "openaiwatch": openaiwatch.load,
-            "gpt4": gpt4.load,
-            "texample.net": texample_net.load,
-            "tikz.net": tikz_net.load,
-            "pgfplots.net": tikz_net.load, # tikz.net downloader also works for this site
+            # "PetarV-/TikZ": petarv_tikz.load,
+            # "janosh/tikz": janosh_tikz.load,
+            # "tikz_favorites": tikz_favorites.load,
+            # "LaTeX-examples": latex_examples.load,
+            # "pgfmanual": pgfmanual.load,
+            # "chatgpt": chatgpt.load,
+            # "openaiwatch": openaiwatch.load,
+            # "gpt4": gpt4.load,
+            # "texample.net": texample_net.load,
+            # "tikz.net": tikz_net.load,
+            # "pgfplots.net": tikz_net.load, # tikz.net downloader also works for this site
             "arxiv": arxiv.load,
-            "tex.stackexchange.com": texse_gen
+            # "tex.stackexchange.com": texse_gen
         }
 
 
